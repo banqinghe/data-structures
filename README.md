@@ -1,18 +1,24 @@
 # data-structures
 <br>
-记录数据结构源码的仓库，用来储存大一数据结构实践课程的作业代码。
+记录数据结构源码的仓库，用来储存大一数据结构实践课程的作业代码。很多代码来自课本《Data Structures and Program Design in C++》。
 
 
 
 
 ## 第一章 上机练习
 
-### 1. Life Game
-### 2. Magic Square
-### 3. One-Dimensional Life
+1. Life Game
+2. Magic Square
+3. One-Dimensional Life
 
 ## 第二章 上机练习
 
+1. 栈的顺序实现
+2. 双栈的顺序实现
+3. 10以内的后绪波兰式求解
+4. 任意进制转换
+5. 出入栈序列判断
+6. 程序代码中的括号匹配*
 
 ## 求解中序波兰式
 
