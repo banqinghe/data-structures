@@ -1,0 +1,85 @@
+1. Life Game
+Definitions：
+Life is really a simulation, not a game with players. It takes place on unbounded rectangular grid in which each cell can either be occupied by an organism or not. Occupied cells are called alived; unoccupied cells are called dead. Which cells are alive changes from generation to generation according to the number of neighboring cells that are alive, as follows transition rules:
+(1)	The neighbors of a given cell are the eight cells that touch it vertically, horizontally, or diagonally.
+(2)	If a cell is alive but either has no neighboring cells alive or only one alive, then in the next generation the cell dies of loneliness.
+(3)	If a cell is alive and has four or more neighboring cells also alive, then in the next generation the cell dies of overcrowding.
+(4)	A living cell with either two or three living neighbors remains alive in the next generation.
+(5)	If a cell is dead, then in the next generation it will become alive if it has exactly three neighboring cells, no more or fewer, that are already alive. All other dead cells remain dead in the next generation.
+(6)	All births and deaths take place at exactly the same time.
+(7)	The size of grid is 20*60
+
+Input: the coordinates of living cells (Terminate the list with the special pair -1 -1). 
+      The number (n) of generation. (n=0 means the initial Grid)
+Output: the next n generations of the grid.
+
+For example：
+【输入】
+5 3
+5 4
+5 5
+5 6
+-1 -1 //输入结束
+3 //输出第3代的结果
+【输出】
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+---**-------------------------------------------------------
+--*--*------------------------------------------------------
+---**-------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+
+==========================================================================================================
+
+2. Magic Square
+A magic square is a square array or integers such that the sum of every row, the sum of every column, and sum of each of the two diagonals are all equal. 
+Write a program that generates a magic square by the following method. This method works only when the size of the square is an odd number. Start by placing 1 in the middle of the top row. Write down successive integers 2, 3, … along a diagonal going upward and to the right. When you reach the top row(as you do immediately since 1 is in the top now), continue to the bottom row as though the bottom row were immediately above the top row. When you reach the rightmost column, continue to the leftmost column as though it were immediately to the right of the rightmost one. When you reach a position that is already occupied, instead drop straight down one position from the previous number to insert the new one. The 5*5 magic square constructed by this method is shown as follows.
+17 24 1 8 15
+23 5 7 14 16
+4 6 13 20 22
+10 12 19 21 3
+11 18 25 2 9
+.
+【输入】奇数n，1<=n<=101.
+【输出】n*n的magic square.
+
+For example,
+【输入】 5
+【输出】
+17 24 1 8 15
+23 5 7 14 16
+4 6 13 20 22
+10 12 19 21 3
+11 18 25 2 9
+
+==========================================================================================================
+
+3. One-Dimensional Life
+One-Dimensional Life takes place on a straight line instead of a rectangular grid. Each cell has four neighboring positions: those at distance one or two from it on each side. The rules are similar to those of two-dimensional Life except (1) a dead cell with either two or three living neighbors will become alive in the next generation, and (2) a living cell dies if it has zero, one, or three living neighbors. (Hence a dead cell with zero, one, or four living neighbors stays dead; a living cell with two or four living neighbors stays alive.) The progress of sample communities is shown in Figure 1.6(Textbook page44）. Design, write, and test a program for one-dimensional Life.
+The total count of the cells is less than 60.
+
+Input: the position of living cells (1<=postion<=60. Terminate the list with the special number -1). 
+      The number (n) of generation. (n=0 means the initial Grid)
+Output: the next n generations of the grid.
+
+For example：
+【输入】
+5 7 -1
+1
+【输出】
+-----*------------------------------------------------------
+
