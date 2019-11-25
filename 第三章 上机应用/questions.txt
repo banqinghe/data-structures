@@ -1,0 +1,102 @@
+1. （字符串的平衡性分析）P92 Programming Project 3.3
+Write a program that will read one line of input from the terminal. The input is supposed to consist of two parts separated by a colon :. As its result, your program should produce a single character as follows:
+N No colon on the line.
+L The left part (before the colon) is longer than the right.
+R The right part (after the colon) is longer than the left.
+D The left and right parts have the same length but are different.
+S The left and right parts are exactly the same.
+Examples: 
+Input            Output
+Sample Sample      N
+Left:Right         R
+Sample:Sample      S
+Dog:Cat            D
+Rabbit:Dog         L
+【输入】
+字符串的数量n
+第2到n+1行分别输入需要分析的字符串
+【输出】
+N条字符串的判断结果
+例如：
+【输入】
+3
+Sample Sample
+Dog:Cat
+Rabbit:Dog
+【输出】
+N
+D
+L
+
+2. （车厢调度）某城市有一个火车站，铁轨铺设如下图所示。有n节车厢从主轨道左边驶入车站，按进站顺序编号为1-n。你的任务是判断是否能让它们按照某种特定的顺序进入主轨道右边并驶出车站。为了重组车厢，你可以借助辅轨道停放车厢（驶入辅轨道的车厢必须按照相同的顺序驶出）。也就是说，对于每个车厢，可以从主轨道开到右边，也可以沿辅轨道开到右边，但一旦车厢停放进辅轨道，便只能沿辅轨道进入主轨道右边。例如，有5节车厢以1、2、3、4、5的顺序依次进入，要求以3、4、1、5、2的顺序驶出，则可以先将1、2车厢停放入辅轨道，将3、4沿主轨道开向右边，接着，使停放在辅轨道的1车厢驶出，将5沿主轨道开向右边，最后将停放在辅轨道的2车厢驶出，完成调度。
+
+【输入】第一行是一个正整数n，表示车厢数目，第二行是1-n的任意排列，表示n节车厢在主轨道右边的出站顺序。
+【输出】如果调度可以完成，输出Yes，否则输出No
+例如：
+【输入】
+5
+3 4 1 5 2
+【输出】
+5 Yes//序列长度 判断结果
+【输入】
+3
+3 2 1
+【输出】
+3 No //序列长度 判断结果
+
+3. （团队队列）有t个团队的人正在排一个长队。每次新来一个人时，如果他有队友在排队，那么这个新人会插队到最后一个队友的身后。如果没有任何一个队友排队，则他会排到长队的队尾。输入要求支持如下指令：
+ENQUEUE x y：x团队编号为y的人进入长队。
+DEQUEUE：长队的队首出队。
+STOP：停止模拟
+对于每个DEQUEUE指令，输出出队的人的编号。
+【输入】输入数据包含多个测试样例，输入的每个样例第一行为团队数t（1<=t<=10），团队编号为1…t，接着的每行输入操作指令。当输入指令为STOP时，结束该样例的模拟。当输入样例的团队数t为0时，结束输入，无需担心指令出错。
+【输出】对于每一个测试样例，输出“Scenario #k”。接着，对每一条DEQUEUE指令，输出出队的人的编号。每个测试样例以一个空白行隔开（包括最后一个测试样例）
+例如：
+【输入】
+2
+ENQUEUE 1 101
+ENQUEUE 2 201
+ENQUEUE 1 102
+ENQUEUE 2 202
+ENQUEUE 1 103
+ENQUEUE 2 203
+DEQUEUE
+DEQUEUE
+DEQUEUE
+DEQUEUE
+DEQUEUE
+DEQUEUE
+STOP
+2
+ENQUEUE 1 101
+ENQUEUE 2 201
+ENQUEUE 1 102
+ENQUEUE 1 103
+ENQUEUE 1 104
+ENQUEUE 1 105
+DEQUEUE
+DEQUEUE
+ENQUEUE 2 202
+ENQUEUE 2 203
+DEQUEUE
+DEQUEUE
+DEQUEUE
+DEQUEUE
+STOP
+0
+【输出】
+Scenario #1
+101
+102
+103
+201
+202
+203
+
+Scenario #2
+101
+102
+103
+104
+105
+201

@@ -1,0 +1,40 @@
+1. （通用队列的顺序实现）请用顺序存储实现通用队列的数据结构MyQueue。你所实现的队列应包括：出队、入队、访问队首、判断队列是否已满，判断队列是否为空等功能。利用你实现的MyQueue实现输入整数序列的顺序输出。
+【输入】整数序列以-1结束，序列长度小于100
+【输出】输入整数序列的顺序序列
+例如：
+【输入】3 9 8 2 5 -1 
+【输出】3 9 8 2 5
+
+2. （通用队列的改进）请用顺序存储实现通用队列改进后的数据结构MyQueue1。你所实现的队列应包括：出队、入队、访问队首、判断队列是否已满，判断队列是否为空等功能。在MyQueue1中将始终保持队列的首部在数组的下标为0的位置。利用你实现的MyQueue1实现输入整数序列的顺序输出。
+【输入】整数序列以-1结束，序列长度小于100
+【输出】输入整数序列的顺序序列
+例如：
+【输入】3 9 8 2 5 -1 
+【输出】3 9 8 2 5
+
+3. （环形队列）请用顺序存储实现环形的数据结构CirQueue。你所实现的环形队列应包括：出队、入队、访问队首、判断队列是否已满，判断队列是否为空等功能。利用你实现的CirQueue实现输入整数序列的顺序输出。
+【输入】整数序列以-1结束，序列长度小于100
+【输出】输入整数序列的顺序序列
+例如：
+【输入】3 9 8 2 5 -1 
+【输出】3 9 8 2 5
+
+4. （双端队列）The word deque (pronounced either “deck” or “DQ”) is a shortened form of double-ended queue and denotes a list in which entries can be added or removed from either the first or the last position of the list, but no changes can be made elsewhere in the list. Thus a deque is a generalization of both a stack and a queue. The fundamental operations on a deque are append_front, append_rear, serve_front, serve_rear, retrieve_front, and retrieve_rear.
+参考：https://en.wikipedia.org/wiki/Double-ended_queue
+请实现deque，并解决如下问题：
+在许多应用类软件的开发中都需要有保存用户历史操作的功能，例如word需要存储用户的编辑操作历史，浏览器需要存储用户浏览网页的历史，搜索栏需要保存最近的搜索记录等。请编写程序存储用户最近的n条操作记录，并将其按照时间顺序（由近到远）输出。
+【输入】
+设置软件需要最大保留的历史操作条数n（1<=n<=50）
+用户的历史操作序列（数值可能大于n，但是<=1000）且操作序列用大写字母来表示。
+【输出】最近的n条操作序列（若操作序列长度小于n，则全部输出）
+例如：
+【输入】
+5
+A B C D
+【输出】
+D C B A
+【输入】
+5
+A B C D E F G
+【输出】
+G F E D C
