@@ -53,6 +53,11 @@
 
 ## 第五章 递归及应用
 
+1. 二进制转换为十进制
+2. Letter Combinations of a Phone Number
+3. n个数的全排列
+4. A Maze Problem
+
 ## 第六章 List顺序存储
 
 ## 第六章 List的链式实现及应用
