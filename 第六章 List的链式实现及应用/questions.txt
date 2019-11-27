@@ -1,0 +1,117 @@
+1.（List的单链表实现）请用单链表（需要记录最后一次访问的位置）实现通用线性表的数据结构MyList。你所实现的List应包括：Insert，Remove，Retrieve，Replace, Traverse，Size，Full等功能。利用你实现的MyList实现输入序列的增删及修改。
+【输入】输入数据共4行，操作过程中序列长度始终小于100；
+第1行为输入的整数序列，以-1结束；
+第2行为N（N>=0）对数a b（0<=a<=length），表示在第a个位置前插入数b，以-1 -1结束；
+第3行为M（M>=0）个数c（0<=c<=length-1），表示删除第c个位置的元素，以-1结束；
+第4行为P（P>=0）对数d e（0<=d<=length-1），表示修改第d个位置的元素，以-1 -1结束。
+**注意：插入，删除，修改操作均按照顺序在同一个序列中进行。
+【输出】操作后的新序列。
+例如：
+【输入】 
+3 7 8 4 6 -1
+1 2 -1 -1  //在第1个位置的元素7前插入数2，此时序列为3 2 7 8 4 6
+3 -1  // 删除序列3 2 7 8 4 6第3个位置的元素8，此时序列为3 2 7 4 6
+4 9 -1 -1//将现有序列第4个位置的元素6修改为9，此时序列为3 2 7 4 9
+【输出】
+3 2 7 4 9  // 输出操作后的新序列
+
+2.（List的双链表实现）请用双链表（需要记录最后一次访问的位置）实现通用线性表的数据结构MyList。你所实现的List应包括：Insert，Remove，Retrieve，Replace, Traverse，Size，Full等功能。利用你实现的MyList实现输入序列的增删、修改及正逆序输出。
+【输入】输入数据共4行，操作过程中序列长度始终小于100；
+第1行为输入的整数序列，以-1结束；
+第2行为N（N>=0）对数a b（0<=a<=length），表示在第a个位置前插入数b，以-1 -1结束；
+第3行为M（M>=0）个数c（0<=c<=length-1），表示删除第c个位置的元素，以-1结束；
+第4行为P（P>=0）对数d e（0<=d<=length-1），表示修改第d个位置的元素，以-1 -1结束。
+**注意：插入，删除，修改操作均按照顺序在同一个序列中进行。
+【输出】操作后新序列的正逆序输出，第1行为正序，第2行为逆序。
+例如：
+【输入】 
+3 7 8 4 6 -1
+1 2 -1 -1// 在第1个位置的元素7前插入数2，此时序列为3 2 7 8 4 6
+3 -1// 删除序列3 2 7 8 4 6第3个位置的元素8，此时序列为3 2 7 4 6
+4 9 -1 -1//将现有序列第4个位置的元素6修改为9，此时序列为3 2 7 4 9
+【输出】
+3 2 7 4 9  // 新序列的正序输出
+9 4 7 2 3  // 新序列的逆序输出
+
+3.（String的实现）请实现字符串数据结构String。String类型支持的操作有：
+比较：==,>,<,>=,<=；
+输入/输出；
+字符串的操作：连接，求长度，子串查找，取子串等。
+利用你实现的String类实现查找及字典序排序等功能。
+以下为String的一种实现参考：
+class String {
+public: // methods of the string ADT
+	String( );
+	~String( );
+	String (const String &copy); // copy constructor
+	String (const char * copy); // conversion from C-string
+	String (List<char> &copy); // conversion from List
+	void operator = (const String &copy);
+	const char *c_str( ) const; // conversion to C-style string
+protected:
+	char *entries;
+	int length;
+};
+
+bool operator == (const String &rst, const String &second);
+bool operator > (const String &rst, const String &second);
+bool operator < (const String &rst, const String &second);
+bool operator >= (const String &rst, const String &second);
+bool operator <= (const String &rst, const String &second);
+bool operator != (const String &rst, const String &second);
+
+void strncpy(String &to, const String &from, int n);
+void strcat(String &add_to, const String &add_on);
+int strstr(const String &text, const String &target); 
+
+String read_in(istream &input);
+void write(String &s);
+
+【输入】输入数据共3行；
+第1行为字符串个数N（1<=N<=1000）；
+第2行为输入的字符串序列，以空格隔开；
+第3行为N（N>=0）对数a b（0<=a，b<=length-1），以-1 -1结束，判断第a个字符串是否是第b个字符串的子串，若是则输出第b个字符串中第一次出现第a个字符串的位置（以0开始），若不是则输出-1。
+【输出】输出数据共2行；
+第1行为输入数据第二行的结果，以空格隔开；
+第2行为字符串序列的字典序输出。
+例如：
+【输入】
+3
+abc abcd cba
+0 1 0 2 -1 -1
+【输出】
+0 -1  // abc在abcd中首次出现的位置是0，abc不是cba的子串
+abc abcd cba  // 字典序输出
+
+4.（单词分组）给定一系列的单词，请把由相同字母组成的单词分为一组，并将所有的分组输出。（要求：按照单词在输入序列中出现的顺序输出分组）
+【输入】一系列的单词（单词数量少于1000）
+【输出】
+分组数x
+第一个分组的单词
+第二个分组的单词
+第x个分组的单词
+例如：
+【输入】 
+eat tea tan ate nat bat eate
+【输出】
+3
+eat tea ate eate
+tan nat
+bat
+
+5.（前向和后向的最近邻值）给定一个包含有m个节点的双链表，链表每个节点的值均为正整数：
+（1）节点i的前向最近邻值需要满足j<i,且节点j的值小于节点i的值，j为满足条件的最大位置点。节点j的值即为节点i的前向最近邻值。若j不存在，节点i的前向最近邻值为0。
+（2）节点i的后向最近邻值需要满足j>i,且节点j的值大于节点i的值，j为满足条件的最小位置点。节点j的值即为节点i的后向最近邻值。若j不存在，节点i的后向最近邻值为0。
+【输入】双链表中的m个值以-1结束
+【输出】
+按顺序输出每个节点的前向最近邻值；
+按顺序输出每个节点的后向最近邻值；
+例如：
+【输入】 2 1 5 -1
+【输出】
+0 0 1
+5 5 0
+【输入】 2 7 3 4 5 -1
+【输出】
+0 2 2 3 4
+7 0 4 5 0
