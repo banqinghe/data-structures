@@ -66,7 +66,18 @@
 
 ## 第六章 List的链式实现及应用
 
+1. List的单链表实现
+2. List的双链表实现
+3. String的实现
+4. 单词分组
+5. 前向和后向的最近临值
+
 ## 第七章 查找及应用
+
+1. 二分查找的实现
+2. Start and End Position
+3. 求开方值
+4. Minimum Size Subarray Sum
 
 ## 第八章 排序及应用-Part1
 
