@@ -1,0 +1,174 @@
+1. 请实现顺序存储的Hash Table。Hash函数用取余法（Modular Arithmetic，除数为小于Hash表大小），冲突检测算法为平方探测，考虑overflow的情况。
+【输入】
+第一行，整数n和m，n表示hash表的大小，m代表插入hash表的元素个数。n为小于2000的素数，m小于n。
+第二行，m对<key value>的值
+第三行，任意查询的key1
+第四行，任意查询的key2
+【输出】
+第一行，探测到key1的过程及key1对应的value；
+第二行，探测到key2的过程及key2对应的value；
+注意若key在hash表中不存在，则输出NULL。
+例如：
+【输入】
+13 6//hash函数为 key%13
+16 16 3 3 29 29 26 26 39 39 52 52//6对<key value>的值
+52
+20
+【输出】
+0 1 4 9 52 52//先后探测了0，1，4，9等位置，且探测成功；
+7 8 NULL//先后探测了位置7和8，探测失败；
+
+2. Design a HashMap without using any built-in hash table libraries.
+Note:请用链地址法解决冲突；
+
+To be specific, your design should include these functions:
+put(key, value) : Insert a (key, value) pair into the HashMap. If the value already exists in the HashMap, update the value. Note:新值插入链表头部，如果已经存在值，则更新这个值
+get(key): Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key.
+remove(key) : Remove the mapping for the value key if this map contains the mapping for the key.
+
+Example:
+MyHashMap hashMap;
+hashMap.put(“abc”, “abc”);          
+hashMap.put(“abcd”, “abcd”);         
+hashMap.get(“abc”);            // returns 1
+hashMap.get(“cat”);            // returns -1 (not found)
+hashMap.put(“abcd”, “ABCD”);          // update the existing value
+hashMap.get(“abcd”);            // returns 1 
+hashMap.remove(“abcd”);          // remove the mapping for 2
+hashMap.get(“abcd”);            // returns -1 (not found)
+
+Key字符串类型的转换借助于BKDR Hash Function
+// BKDR Hash Function
+unsigned int BKDRHash(char *str)
+{
+    unsigned int seed = 31; // 31 131 1313 13131 131313 etc..
+    unsigned int hash = 0;
+ 
+    while (*str)
+    {
+        hash = (hash * seed + (*str++))% Hash_Size;
+    }
+ 
+    return (hash% Hash_Size); //使hash函数返回值在hash表的有效地址范围
+}
+
+
+【输入】
+第一行，整数n和m，n表示hash表的大小，m代表插入hash表的元素个数。n小于1000的素数，m小于n。注意n可理解为BKDRHash中Hash_Size的值。
+第二行，m对<key value>的值
+第三行，1组<key value>//insert<key value>到Hash Map
+第四行，任意的Key1//删除Key
+第五行，任意查询的key2
+【输出】
+第一行，对应于输入第三行<key value>插入到Hash Map的地址信息；
+第二行，对应于输入第四行删除key1的过程；
+第三行，对应于输入第五行探测的key2的过程；
+注意若key在hash表中不存在，则输出NULL。
+例如：
+【输入】
+7 6
+computer 电脑 eye 眼睛 hello 你好 train 火车 wait 等待 zebra 斑马
+train 火车，训练
+dog
+hello
+
+注意：此时Key的位置信息为computer:1; eye:1; hello:0; train:3; wait:2; zebra:0
+
+【输出】
+3//输出train对应的地址码；
+6 dog NULL//dog的地址码为6，删除dog失败；
+0 zebra hello 你好//hello的地址码为0，先访问到zebra然后访问到hello。
+
+3. Given an array of integers, find if the array contains any duplicates.
+
+Your function should return an integer which means the total number of any value appears at least twice in the array, and it should return 0 if every element is distinct.
+
+Example 1:
+Input: [1,2,3,1]
+Output: 1//1存在重复
+
+Example 2:
+Input: [1,2,3,4]
+Output: 0
+
+Example 3:
+Input: [1,1,1,3,3,4,3,2,4,2]
+Output: 4//1，3，4，2存在重复
+
+【输入】
+第一行，整数n,表示数组元素的个数，n小于2000。
+第二行，n个整数
+【输出】
+数组中重复元素的数量；
+例如：
+【输入】
+10
+1 1 1 3 3 4 3 2 4 2
+【输出】
+4
+【输入】
+10
+1 1 1 3 3 6 3 2 9 5
+【输出】
+2
+
+4. Given a string, find the length of the longest substring without repeating characters.
+
+Example 1:
+Input: "abcabcbb"
+Output: 3 
+Explanation: The answer is "abc", with the length of 3. 
+
+Example 2:
+Input: "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+
+Example 3:
+Input: "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3. 
+Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+
+【输入】
+第一行，长度为n的字符串，字符串中不包含空格，n小于2000。
+【输出】
+最大非重复子串的长度；
+
+例如：
+【输入】
+pwwkew
+【输出】
+3
+【输入】
+bbbbb
+【输出】
+1
+
+5.  Given a string S and a string T, find the minimum window in S which will contain every character in T.
+
+Example:
+Input: S = "ADOBECODEBANC", T = "ABC"
+Output: "BANC"
+Note:
+
+If there is no such window in S that covers every character in T, return NULL.
+If there is such window, you are guaranteed that there will always be only one unique minimum window in S.
+
+【输入】
+第一行，长度为n1的字符串S，字符串中不包含空格，n1小于2000。
+第二行，长度为n2的字符串S，字符串中不包含空格，n2小于2000。
+【输出】
+最小窗口对应的子串；
+
+例如：
+【输入】
+ADOBECODEBANC
+ABC
+【输出】
+BANC
+【输入】
+ACDGFT
+DF
+【输出】
+DGF

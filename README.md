@@ -2,6 +2,8 @@
 <br>
 记录数据结构源码的仓库，用来储存大一数据结构实践课程的作业代码。很多代码来自课本《Data Structures and Program Design in C++》。
 
+但是其实很多题目我是有所偷懒的，有时候并没有用所学的数据结构解决问题，这里只是做一个记录。
+
 
 
 
@@ -99,7 +101,11 @@
 
 ## 第九章 表及应用
 
-
+1. Hash Table的顺序实现
+2. Hash Map的实现
+3. Contains Duplicate
+4. Longest Substring Without Repeating Characters
+5. Minimum Window Substring
 
 ## 第十章 二叉树及应用-Part1
 
