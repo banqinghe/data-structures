@@ -109,7 +109,15 @@
 
 ## 第十章 二叉树及应用-Part1
 
+1. Traverse of Binary Tree
+2. Symmetric Tree
+3. The Sum of Path
+4. Binary Search Tree
+5. Buildable Tree
+
 ## 第十章 二叉树及应用-Part2
+
+未实现AVL树的删除操作（菜）
 
 ## 第十一章 B树的实现
 
